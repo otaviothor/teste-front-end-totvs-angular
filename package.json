@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-gh-pages": "ng run teste-front-end-totvs-angular:build-gh-pages",
+    "build-gh-pages": "ng run teste-front-end-totvs-angular:build-gh-pages --base-href /teste-front-end-totvs-angular/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
