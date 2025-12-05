@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Select } from './components/select/select';
+import { Switch } from './components/switch/switch';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Switch, Select],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

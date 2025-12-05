@@ -1,0 +1,97 @@
+.switch-wrapper {
+  .track {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 1rem;
+
+    input {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      z-index: 3;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+
+      &:checked + .key {
+        background-color: var(--track-checked);
+      }
+
+      &:checked + .key::before {
+        transform: translateX(90%);
+        background-color: var(--color-checked);
+        color: var(--color-unchecked);
+        border-color: transparent;
+        content: '✓';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:focus + .key {
+        outline: var(--border-width-lg) solid var(--outline-color-focused);
+        outline-offset: .5rem;
+      }
+
+      &:checked + .key:hover {
+        background-color: var(--track-checked-hover);
+      }
+
+      &:disabled{
+        cursor: not-allowed;
+      }
+
+      &:disabled + .key {
+        border-color: var(--color-checked-disabled);
+      }
+
+      &:disabled + .key::before {
+        background-color: var(--color-unchecked-disabled);
+      }
+
+      &:checked:disabled + .key {
+        background-color: var(--track-unchecked);
+      }
+
+      &:checked:disabled + .key::before {
+        background-color: var(--color-checked-disabled);
+      }
+    }
+
+    .key {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--track-unchecked);
+      transition: 0.2s;
+
+      border-radius: 10px;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: -0.33rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        left: 0;
+        bottom: 0;
+        border: var(--border-width-sm) solid var(--border-color);
+        transition: 0.2s;
+        border-radius: 100%;
+        background-color: var(--color-unchecked);
+      }
+
+      &:hover::before {
+        border-color: var(--color-unchecked-hover);
+      }
+    }
+  }
+}
