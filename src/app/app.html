@@ -1,2 +1,29 @@
-<app-select></app-select>
-<app-switch></app-switch>
+<h1>Component tests | Select | Switch</h1>
+
+<fieldset>
+  <legend>Most important form of your life</legend>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div>
+      <app-select
+        formControlName="sitcom"
+        label="Select your favorite sitcom"
+        [options]="sitcoms"
+      ></app-select>
+      <app-switch
+        formControlName="notifications"
+        label="Do you wanna receive notifications about this sitcom?"
+      ></app-switch>
+    </div>
+    <button type="submit">Submit my choose</button>
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend>Manage components</legend>
+
+  <app-switch
+    (valueChange)="disableControls($event)"
+    label="Disable all component?"
+  ></app-switch>
+</fieldset>

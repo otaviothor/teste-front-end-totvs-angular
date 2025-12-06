@@ -1,0 +1,18 @@
+<div [attr.aria-labelledby]="id">
+  <label [attr.for]="id">{{ label }}</label>
+  <div class="select-wrapper">
+    <select
+      appKmItem
+      required
+      [attr.disabled]="disabled ? disabled : null"
+      [id]="id"
+      (change)="activate($event)"
+    >
+      <option value="" disabled selected>Choose an option</option>
+      @for (option of options; track option.value) {
+      <option [attr.value]="option.value">{{ option.label }}</option>
+      }
+    </select>
+    <span>⌄</span>
+  </div>
+</div>

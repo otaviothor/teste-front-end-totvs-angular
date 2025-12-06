@@ -1,4 +1,5 @@
 .switch-wrapper {
+  margin-top: 1rem;
   .track {
     position: relative;
     display: inline-block;
@@ -35,14 +36,14 @@
 
       &:focus + .key {
         outline: var(--border-width-lg) solid var(--outline-color-focused);
-        outline-offset: .5rem;
+        outline-offset: 0.5rem;
       }
 
       &:checked + .key:hover {
         background-color: var(--track-checked-hover);
       }
 
-      &:disabled{
+      &:disabled {
         cursor: not-allowed;
       }
 
